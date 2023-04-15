@@ -1,0 +1,26 @@
+version: "3.3"
+services:
+  frontend_app_1:
+    image: ms-frontend:1.0
+    ports:
+      - 3000:3000
+    networks:
+      - micro_service
+
+  products_app_1:
+    image: ms-products:1.0
+    ports:
+      - 3001:3001
+    networks:
+      - micro_service
+
+  shopping-cart_app_1:
+    image: ms-shopping-cart:1.0
+    ports:
+      - 3002:3002
+    networks:
+      - micro_service
+
+networks:
+  micro_service:
+    name: micro_service
